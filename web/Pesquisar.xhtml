@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h:form>
+            <center>
+                <h:dataTable var="pessoas" border="1" id="tabela" value="#{pessoa_ref.listarPessoas()}">
+                    <h:column >
+                        <f:facet name="header"> 
+                            ID
+                        </f:facet>
+                        <h:outputText value="#{pessoas.id}" />
+                    </h:column>
+
+                     <h:column >
+                        <f:facet name="header"> 
+                            PessoaRef
+                        </f:facet>
+                         <h:outputText value="#{pessoas.pessoareferencia}" />
+                    </h:column>
+
+                    <h:column >
+                        <f:facet name="header"> 
+                            CPF
+                        </f:facet>
+                        <h:outputText value="#{pessoas.CPF}" />
+                    </h:column>
+
+                    <h:column >
+                        <f:facet name="header"> 
+                            RG
+                        </f:facet>
+                        <h:outputText value="#{pessoas.RG}" />
+                    </h:column>
+                </h:dataTable>
+            </center>
+        </h:form>
+    </body>
+</html>

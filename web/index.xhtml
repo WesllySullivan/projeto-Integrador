@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <h:head>
+        <title>Tela Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <style type="text/css">
+            * {margin: 0px; padding:0px;}
+            div#topo{
+                margin:0px auto;
+                width:1000px;
+                height:130px;
+                border:#72B42D 1px solid;
+                text-align:center;
+                background-color:#538C1D;
+            }
+            div#img_topo{
+                width:185px;
+                height:120px;
+                border:#72B42D 0px solid;
+                margin: 5px 0px 0px 5px;
+                text-align:center;
+                float:left;
+            }
+            div#txt_topo{
+                width:800px;
+                height:120px;
+                border:#72B42D 0px solid;
+                margin: 10px 0px 0px 5px;
+                text-align:center;
+                float:left;
+                color: white;
+                position: relative;
+                right:  8%;
+            }
+            div#txt_topo h1 {
+                font-family:Verdana, Geneva, sans-serif;
+                font-size:20px;
+                text-transform:uppercase;
+                font-weight:bold;
+                font:Verdana, Geneva, sans-serif;
+            }    
+            div#txt_topo h2 {
+                font-family:Verdana, Geneva, sans-serif;
+                font-size:16px;
+                text-transform:uppercase;
+                font: Verdana, Geneva, sans-serif;
+            }
+            div#txt_topo h3 {
+                font-family:Verdana, Geneva, sans-serif;
+                font-size:14px;
+                text-transform:uppercase;
+                text-decoration:underline;
+                font:Verdana, Geneva, sans-serif;
+            }
+            div#geral_conteudo{
+                margin:0px auto;
+                width:1000px;
+                //height:457px;
+                border:#72B42D 1px solid;
+                text-align:center;
+                margin-top: 5px;
+
+            }
+            div#menu{
+                width:990px;
+                height:47px;
+                border:#72B42D 1px solid;
+                margin:5px 5px 5px 5px;
+                margin-top: 5px;
+                text-align:center;
+                color: white;
+                background-color:#72B42D;
+
+
+                /* sup dir inf esq*/    
+            }    
+            div#conteudo{
+                width:990px;
+                height:400px;
+                border:#72B42D  1px solid;
+                margin: 5px 5px 5px 5px;
+                text-align:left;
+                background-color:#72B42D;
+
+            }
+
+            div#clear { clear:both; }
+            div#rodape{
+                //position: absolute;
+                margin: 0px auto;
+                width: 1000px;
+                height:35px;
+                border:#72B42D 1px solid;
+                text-align:center;
+                margin-bottom: 5px;
+                margin-top:5px;
+                margin-bottom:5px;
+                background-color: #538C1D;
+                color: white;
+                //background-color: #34650E; verde escuro
+
+            }
+
+        </style>
+
+    </h:head>
+
+    <h:body>
+        <h:form>
+
+            <div id="topo">
+
+                <div id="img_topo">
+                    <img src="Imagens/LogoM2.png" width="185px" height="120px"/>  
+                </div>
+
+
+                <div id="txt_topo">
+                    <h1>SUAC</h1><br />
+                    <h2>Sistema Único de Assistencia ao CRAS</h2><br />
+                    <h3>CRAS Icó-CE</h3>
+                </div>    
+            </div>
+
+            <div id="geral_conteudo">
+
+                <div id="conteudo">
+
+                    <p:fieldset   id="grid" legend="Login" style="left:100px; width:400px;height:200px; left: 30%; top: 22%; position: relative">
+
+                        <f:facet name="header">
+                            <h:outputText value="Login" />
+                        </f:facet>
+                        
+                        <div>
+                            <p:outputLabel for="usuario" value="Usuario:"  style=" position: relative; left: 15%;"  /><br></br>
+                            <p:inputText  required="true"   style=" position: relative; left: 15%;" value="#{usuario.usuario}" id="usuario" type="text" size="27" placeholder="Digite seu usuario..." />
+                        </div>
+
+                        <div>
+                            
+                            <p:outputLabel for="senha" value="Senha:"   style=" position: relative; left: 15%;" /><br></br>
+                            <p:inputText required="true" style=" position: relative; left: 15%;" value="#{usuario.senha}" id="senha" size="27" type="password" placeholder="Digite sua senha..."  >
+                            <f:validateLength minimum="4" />
+                            </p:inputText>
+                        </div>
+                        <p:growl id="growl" />
+                        <div>
+                            <br></br>
+                            <p:commandButton icon="ui-icon-check"  update="growl grid"  value="Confirma"   action="#{usuario.validaLogin()}"></p:commandButton>
+                        </div>
+                       </p:fieldset >
+                </div>
+            </div>
+
+            <div id="clear"></div>
+
+            <div id="rodape">
+                <div style="margin-top: 10px">
+                    <h6> © CAPSULE CORP. 2014 - RUA DESENBARGADOR JOSÉ BASTOS - SUACCAPSULECORP@GMAIL.COM</h6>
+                </div>
+            </div>
+
+        </h:form>
+    </h:body>
+</html>

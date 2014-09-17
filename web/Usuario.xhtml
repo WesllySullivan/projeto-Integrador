@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Cadastro </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <style type="text/css">
+            * {margin: 0px; padding:0px;}
+            div#topo{
+                margin:0px auto;
+                width:1000px;
+                height:130px;
+                border:#72B42D 1px solid;
+                text-align:center;
+                background-color:#538C1D;
+            }
+            div#img_topo{
+                width:185px;
+                height:120px;
+                border:#72B42D 0px solid;
+                margin: 5px 0px 0px 5px;
+                text-align:center;
+                float:left;
+            }
+            div#txt_topo{
+                width:800px;
+                height:120px;
+                position: relative;
+                left: 1%;
+                border:#72B42D 0px solid;
+                margin: 10px 0px 0px 5px;
+                text-align:center;
+
+                color: white;
+            }
+            div#txt_topo h1 {
+                font-family:Verdana, Geneva, sans-serif;
+                font-size:20px;
+                text-transform:uppercase;
+                font-weight:bold;
+                font:Verdana, Geneva, sans-serif;
+            }    
+            div#txt_topo h2 {
+                font-family:Verdana, Geneva, sans-serif;
+                font-size:16px;
+                text-transform:uppercase;
+                font: Verdana, Geneva, sans-serif;
+            }
+            div#txt_topo h3 {
+                font-family:Verdana, Geneva, sans-serif;
+                font-size:14px;
+                text-transform:uppercase;
+                text-decoration:underline;
+                font:Verdana, Geneva, sans-serif;
+            }
+            div#geral_conteudo{
+                margin:0px auto;
+                width:1000px;
+                //height:457px;
+                border:#72B42D 1px solid;
+                text-align:center;
+                margin-top: 5px;
+
+            }
+            div#menu{
+                width:990px;
+                height:47px;
+                border:#72B42D 1px solid;
+                margin:5px 5px 5px 5px;
+                margin-top: 5px;
+                text-align:center;
+                color: white;
+                background-color:#72B42D;
+
+
+                /* sup dir inf esq*/    
+            }    
+            div#conteudo{
+                width:990px;
+                //height:296px;
+                border:#72B42D  1px solid;
+                margin: 5px 5px 5px 5px;
+                text-align:left;
+                background-color:#72B42D;
+
+            }
+
+            div#clear { clear:both; }
+            div#rodape{
+                //position: absolute;
+                margin: 0px auto;
+                width: 1000px;
+                height:35px;
+                border:#72B42D 1px solid;
+                text-align:center;
+                margin-bottom: 5px;
+                margin-top:5px;
+                margin-bottom:5px;
+                background-color: #538C1D;
+                color: white;
+                //background-color: #34650E; verde escuro
+
+            }
+
+        </style>
+
+    </h:head>
+
+    <h:body>
+
+        <div id="topo">
+
+            <div id="img_topo">
+                <img src="Imagens/LogoM2.png" width="185px" height="120px"/>  
+            </div>
+
+            <div id="txt_topo">
+
+
+
+                <h1>SUAC</h1><br />
+                <h2>Sistema Único de Assistencia ao CRAS</h2><br />
+                <h3>CRAS Icó-CE</h3>
+            </div>    
+        </div>
+
+        <div id="geral_conteudo">
+            <div id="menu" >
+                <h:form>
+                    <p:menubar autoDisplay="false">
+                        <p:submenu label="Atendimento" icon="ui-icon-document">
+                            <p:menuitem value="Novo" icon="ui-icon-contact" url="/faces/PessoaRef.xhtml"/>
+                            <p:menuitem value="Pesquisar" icon="ui-icon-contact" url="Erro.xhtml"/>
+                            <p:menuitem value="Continuar" icon="ui-icon-contact" url="Erro.xhtml"/>
+                            <p:menuitem value="Eliminar" icon="ui-icon-contact" url="Erro.xhtml"/>
+                            <p:separator />
+                            <p:menuitem value="Sair" url="index.xhtml" />
+                        </p:submenu>
+
+                        <p:submenu label="Acompanhamento" icon="ui-icon-pencil" >
+                            <p:menuitem value="Fazer" icon="ui-icon-arrowreturnthick-1-w" url="Erro.xhtml"/>	
+                            <p:menuitem value="Desfazer" icon="ui-icon-arrowreturnthick-1-w" url="Erro.xhtml"/>
+                            <p:menuitem value="Refazer" icon="ui-icon-arrowreturnthick-1-e" url="Erro.xhtml"/>
+                        </p:submenu>
+
+                        <p:submenu label="Mapeamento" icon="ui-icon-gear">
+                            <p:menuitem value="Cadastrar" icon="ui-icon-refresh" url="Erro.xhtml"/>
+                            <p:menuitem value="Procurar" icon="ui-icon-newwin" url="Erro.xhtml"/>
+                            <p:separator />
+                            <p:menuitem value="Relatórios" icon="ui-icon-document" url="Erro.xhtml"/>
+                        </p:submenu>
+
+                        <p:submenu label="Agendamento" icon="ui-icon-gear">
+                            <p:submenu label="Marca" icon="ui-icon-refresh">
+                                <p:menuitem value="Data" url="Erro.xhtml"/>
+                                <p:menuitem value="Local" url="Erro.xhtml"/>
+                            </p:submenu>
+                            <p:menuitem value="Agente de Visita" icon="ui-icon-newwin" url="Erro.xhtml"/>
+                        </p:submenu>
+
+                        <p:submenu label="Cadastrar Usuário" icon="ui-icon-gear">
+                            <p:menuitem value="Usuario" icon="ui-icon-newwin" url="/faces/Usuario.xhtml"/>
+                        </p:submenu>
+
+                        <p:submenu label="Ajuda" icon="ui-icon-help">
+                            <p:menuitem value="Bem Vindo" url="Erro.xhtml" />
+                            <p:menuitem value="Perguntas Frequentes" url="Erro.xhtml" />
+                            <p:menuitem value="Política de Privacidade" url="Erro.xhtml" />
+                            <p:menuitem value="Sobre SUAC" url="Erro.xhtml" />
+                        </p:submenu>
+
+                    </p:menubar>
+                </h:form>
+            </div>
+
+            <div id="conteudo">
+                <h:form>
+                    <p:fieldset legend="Cadastrar Usuario" style=" width:954px; position: relative">
+                        <h:panelGrid columns="2">
+                            <div style="margin-top: 5px">
+                                <label class="control-label" for="inputEndFam">Nome do Usuario:</label>
+                                <p:inputText id="nome" value="#{usuario.u.nome}" placeholder="Insira o nome..." size="25"/>
+                            </div>
+                            <div style="margin-top: 5px">
+                                <label class="control-label" for="inputBairro">Sobrenome:</label>
+                                <p:inputText id="sobrenome" value="#{usuario.u.sobrenome}" placeholder="Insira o sobrenome..." size="25"/>
+                            </div>
+                            <div style="margin-top: 5px">
+                                <label class="control-label" for="inputUfEnd" >CPF:</label>
+                                <p:inputMask id="cpf" value="#{usuario.u.cpf}" mask="999.999.999-99" placeholder="Insira o cpf..." size="14"/>
+                            </div>
+                            <div style="margin-top: 5px">
+                                <label class="control-label"  for="inputCep">Endereço:</label>
+                                <p:inputText id="endereco" value="#{usuario.u.endereco}" placeholder="Insira o endereço..." size="25"/>
+                            </div>
+                            <div style="margin-top: 5px">
+                                <label class="control-label" for="inputEndFam">Telefone:</label>
+                                <p:inputMask mask="(99)9999-9999" id="telefone" value="#{usuario.u.telefone}" maxlength="10" placeholder="Insira o numero de telefone..."/>
+                            </div>
+                            <div style="margin-top: 5px">
+                                <label class="control-label" for="inputEndFam">Usuario:</label>
+                                <p:inputText id="usuario" value="#{usuario.u.usuario}" placeholder="Crie seu nickname..." size="20"/>
+                            </div>
+                            <div style="margin-top: 5px">
+                                <label class="control-label" for="inputEndFam">Senha:</label>
+                                <p:inputText id="senha" type="password" value="#{usuario.u.senha}" placeholder="Insira uma senha..." size="20"/>
+                            </div>
+                            <div style="margin-top: 5px">
+                                <label class="control-label" for="inputEndFam">Confirmar Senha:</label>
+                                <p:inputText id="confirmarsenha" type="password" value="#{usuario.confirmaSenha}" placeholder="Confirme sua senha..." size="20"/>
+                            </div>
+                            <div style="margin-top: 5px">
+                                <label class="control-label" for="inputEndFam">E-Mail:</label>
+                                <p:inputText id="email" value="#{usuario.u.email}" placeholder="Insira seu e-mail..." size="30"/>
+                            </div>
+
+                        </h:panelGrid>
+
+                        <h:panelGrid columns="3" style="margin-top: 10px; margin-left: 75%">
+                            <div>
+                                <p:commandButton value="Menu" action="index.xhtml"></p:commandButton>
+                                <p:commandButton value="Salvar" action="#{usuario.adicionarUsuario()}"></p:commandButton>
+                            </div>
+                        </h:panelGrid>
+                    </p:fieldset >
+                </h:form>
+            </div>
+        </div>
+
+        <div id="clear"></div>
+
+        <div id="rodape" >
+            <div style="margin-top: 10px">
+                <h6> © CAPSULE CORP. 2014 - RUA DESENBARGADOR JOSÉ BASTOS - SUACCAPSULECORP@GMAIL.COM</h6>
+            </div>
+        </div>
+
+
+    </h:body>
+</html>
+
+
